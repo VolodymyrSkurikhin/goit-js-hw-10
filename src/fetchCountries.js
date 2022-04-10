@@ -3,6 +3,7 @@ import { markup }  from './markup';
 // import search  from './index';
 // export let list;
 export function fetchCountries(name) {
+  // if (name === '') return;
   return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
     // 
   )

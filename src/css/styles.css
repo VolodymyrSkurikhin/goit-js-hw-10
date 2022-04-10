@@ -34,7 +34,22 @@ input#search-box:active {
   justify-content: start;
 }
 .country-name {
-  font-size: 24;
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 15px;
+}
+.country-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.country-name-separate {
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 15px;
+}
+.country-separate {
+  font-size: 24px;
   font-weight: 700;
   margin-left: 15px;
 }

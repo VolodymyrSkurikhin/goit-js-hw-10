@@ -6,13 +6,15 @@ const refCountryInfo = document.querySelector(".country-info");
 export function markup(list) {
   console.log(list);
   if (list.length > 10) {
-    Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
+    Notiflix.Notify.info("Too many matches found. Please enter a more specific name.")
+      return;
   } else if (list.length <= 10 && list.length >= 2) {
     renderListOfCountries(list);
   } else if (list.length === 1) {
     renderOneCountry(list)
-  }
-  return;
+  } else if (list==='') {refCountries.innerHTML = '';
+  refCountryInfo.innerHTML = '';
+  return;}
 };
 function renderListOfCountries(list) {
   refCountries.innerHTML = list.map(item =>
@@ -22,9 +24,9 @@ function renderListOfCountries(list) {
 function renderOneCountry(list) {
   refCountryInfo.innerHTML =
     `<div class="country-wrapper">
-      <img src="${list.flags.svg}" alt="flag" width=1000/>
+      <img src="${list.flags.svg}" alt="flag" width=40/>
       <span class="country-name-separate">${list.name.official}</span>
-      </div>
+    </div>
     <div class="country-wrapper">
       <span class="country-separate"><strong>Capital:</strong></span>
       <span class="country-separate">${list.capital}</span>
