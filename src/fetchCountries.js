@@ -1,10 +1,17 @@
+import Notiflix from 'notiflix/build/notiflix-notify-aio';
+import { markup }  from './markup';
+// import search  from './index';
+// export let list;
 export function fetchCountries(name) {
-  return fetch('https://restcountries.com/v3.1/name/${name}?fields=name.official,capital,population,flags.svg,languages')
+  return fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
+    // 
+  )
     .then(response => {
       if (!response.ok) {
-      throw new Error(response.status)
-      }
-      return response.json()
+        throw new Error();
+      };
+      return response.json();
     })
-    .then(console.log)
+    .then(markup)
+    .catch(() => Notiflix.Notify.failure("Oops, there is no country with that name"));
 };
