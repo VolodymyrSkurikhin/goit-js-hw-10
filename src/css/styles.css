@@ -50,6 +50,11 @@ input#search-box:active {
 }
 .country-separate {
   font-size: 24px;
-  font-weight: 700;
+}
+.country-separate.r {
+  font-size: 24px;
   margin-left: 15px;
+}
+.country-info {
+  margin-left: 40px;
 }
